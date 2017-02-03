@@ -1,0 +1,46 @@
+GENERALISED ANXIETY DISORDER ASSESSMENT (GAD-7)
+===============================================
+
+Over the last 2 weeks, how often have you been bothered by any of the following problems?
+
+1. Feeling nervous, anxious or on edge
+0 - Not at all
+1 - Several days
+2 - More than half the days
+3 - Nearly every day
+
+2. Not being able to stop or control worrying
+0 - Not at all
+1 - Several days
+2 - More than half the days
+3 - Nearly every day
+
+3. Worrying too much about different things
+0 - Not at all
+1 - Several days
+2 - More than half the days
+3 - Nearly every day
+
+4. Trouble relaxing
+0 - Not at all
+1 - Several days
+2 - More than half the days
+3 - Nearly every day
+
+5. Being so restless that it is hard to sit still
+0 - Not at all
+1 - Several days
+2 - More than half the days
+3 - Nearly every day
+
+6. Becoming easily annoyed or irritable
+0 - Not at all
+1 - Several days
+2 - More than half the days
+3 - Nearly every day
+
+7. Feeling afraid as if something awful might happen
+0 - Not at all
+1 - Several days
+2 - More than half the days
+3 - Nearly every day
