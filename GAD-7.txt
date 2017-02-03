@@ -44,3 +44,12 @@ Over the last 2 weeks, how often have you been bothered by any of the following 
 1 - Several days
 2 - More than half the days
 3 - Nearly every day
+
+Scoring
+-------
+
+GAD-7 for anxiety (score out of 21)
+0 - 4     None/minimal symptoms
+5 - 10    Mild anxiety
+11 - 15   Moderate anxiety
+15 - 21   Severe anxiety
