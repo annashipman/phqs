@@ -100,6 +100,7 @@ public class Questions extends JPanel
           Files.newBufferedWriter(
             file,
             StandardCharsets.UTF_8,
+            StandardOpenOption.CREATE,
             StandardOpenOption.APPEND
           )
         ) {
