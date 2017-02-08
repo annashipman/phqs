@@ -7,6 +7,7 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -21,7 +22,10 @@ public class Questions extends JPanel
     static String moreThanHalf = "More than half the days";
     static String everyDay = "Nearly every day";
 
+    ButtonGroup group = new ButtonGroup();
+
     public Questions() {
+
         super(new BorderLayout());
 
         //Create question
@@ -45,17 +49,10 @@ public class Questions extends JPanel
         everyDayButton.setActionCommand(everyDay);
 
         //Group the radio buttons.
-        ButtonGroup group = new ButtonGroup();
         group.add(notAtAllButton);
         group.add(severalDaysButton);
         group.add(moreThanHalfButton);
         group.add(everyDayButton);
-
-        //Register a listener for the radio buttons.
-        notAtAllButton.addActionListener(this);
-        severalDaysButton.addActionListener(this);
-        moreThanHalfButton.addActionListener(this);
-        everyDayButton.addActionListener(this);
 
         //Put the radio buttons in a column in a panel.
         JPanel radioPanel = new JPanel(new GridLayout(0, 1));
@@ -64,15 +61,21 @@ public class Questions extends JPanel
         radioPanel.add(moreThanHalfButton);
         radioPanel.add(everyDayButton);
 
+        //add a submit button
+        JButton submitButton = new JButton();
+        submitButton.setText("Submit");
+        submitButton.addActionListener(this);
+
         add(question, BorderLayout.WEST);
         add(radioPanel, BorderLayout.CENTER);
+        add(submitButton, BorderLayout.SOUTH);
         setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
     }
 
     /** Listens to the radio buttons. */
     public void actionPerformed(ActionEvent e) {
         //compose this to get what I want the action to be
-        System.out.println(e.getActionCommand());
+        System.out.println(group.getSelection().getActionCommand());
     }
 
     private static void createAndShowGUI() {
