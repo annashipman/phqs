@@ -22,6 +22,7 @@ public class Questions extends JPanel
     static String severalDays = "Several days";
     static String moreThanHalf = "More than half the days";
     static String everyDay = "Nearly every day";
+    static String submit = "Submit";
 
     ButtonGroup group = new ButtonGroup();
 
@@ -63,8 +64,7 @@ public class Questions extends JPanel
         radioPanel.add(everyDayButton);
 
         //add a submit button
-        JButton submitButton = new JButton();
-        submitButton.setText("Submit");
+        JButton submitButton = new JButton(submit);
         submitButton.addActionListener(this);
 
         add(question, BorderLayout.WEST);
