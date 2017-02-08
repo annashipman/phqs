@@ -5,6 +5,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
@@ -78,11 +87,26 @@ public class Questions extends JPanel
         //compose this to get what I want the action to be
         ButtonModel selection = group.getSelection();
         if (selection != null) {
-          System.out.println(selection.getActionCommand());
+          writeResults(selection.getActionCommand());
         }
         else {
           System.out.println("None selected");
         }
+    }
+
+    private static void writeResults(String results) {
+      Path file = Paths.get("./file.txt");
+      try (BufferedWriter writer =
+          Files.newBufferedWriter(
+            file,
+            StandardCharsets.UTF_8,
+            StandardOpenOption.APPEND
+          )
+        ) {
+        writer.append(results, 0, results.length());
+      } catch (IOException x) {
+        System.err.format("IOException: %s%n", x);
+      }
     }
 
     private static void createAndShowGUI() {
