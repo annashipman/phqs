@@ -7,6 +7,7 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -75,7 +76,13 @@ public class Questions extends JPanel
     /** Listens to the radio buttons. */
     public void actionPerformed(ActionEvent e) {
         //compose this to get what I want the action to be
-        System.out.println(group.getSelection().getActionCommand());
+        ButtonModel selection = group.getSelection();
+        if (selection != null) {
+          System.out.println(selection.getActionCommand());
+        }
+        else {
+          System.out.println("None selected");
+        }
     }
 
     private static void createAndShowGUI() {
