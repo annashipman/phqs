@@ -36,10 +36,10 @@ public class Questions extends JPanel
     ButtonGroup group = new ButtonGroup();
 
     public Questions() {
-
         super(new BorderLayout());
+    }
 
-        //Create question
+    public void loadQuestions() {
         JLabel question = new JLabel("Sample question");
 
         //Create the radio buttons.
@@ -116,7 +116,8 @@ public class Questions extends JPanel
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //Create and set up the content pane.
-        JComponent newContentPane = new Questions();
+        Questions newContentPane = new Questions();
+        newContentPane.loadQuestions();
         newContentPane.setOpaque(true);
         frame.setContentPane(newContentPane);
 
