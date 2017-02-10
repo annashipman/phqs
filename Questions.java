@@ -42,6 +42,20 @@ public class Questions extends JPanel
     public void loadQuestions() {
         JLabel question = new JLabel("Sample question");
 
+        JPanel radioPanel = new JPanel(new GridLayout(0, 1));
+        radioPanel = populateRadioPanel(radioPanel);
+
+        //add a submit button
+        JButton submitButton = new JButton(submit);
+        submitButton.addActionListener(this);
+
+        add(question, BorderLayout.WEST);
+        add(radioPanel, BorderLayout.CENTER);
+        add(submitButton, BorderLayout.SOUTH);
+        setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+    }
+
+    public JPanel populateRadioPanel(JPanel radioPanel) {
         //Create the radio buttons.
         JRadioButton notAtAllButton = new JRadioButton(notAtAll);
         notAtAllButton.setMnemonic(KeyEvent.VK_0);
@@ -65,21 +79,12 @@ public class Questions extends JPanel
         group.add(moreThanHalfButton);
         group.add(everyDayButton);
 
-        //Put the radio buttons in a column in a panel.
-        JPanel radioPanel = new JPanel(new GridLayout(0, 1));
+        //Add them to radio panel
         radioPanel.add(notAtAllButton);
         radioPanel.add(severalDaysButton);
         radioPanel.add(moreThanHalfButton);
         radioPanel.add(everyDayButton);
-
-        //add a submit button
-        JButton submitButton = new JButton(submit);
-        submitButton.addActionListener(this);
-
-        add(question, BorderLayout.WEST);
-        add(radioPanel, BorderLayout.CENTER);
-        add(submitButton, BorderLayout.SOUTH);
-        setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+        return radioPanel;
     }
 
     /** Listens to the radio buttons. */
