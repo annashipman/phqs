@@ -34,6 +34,7 @@ public class Questions extends JPanel
     static String submit = "Submit";
 
     ButtonGroup group = new ButtonGroup();
+    JPanel radioPanel = new JPanel(new GridLayout(0, 1));
 
     public Questions() {
         super(new BorderLayout());
@@ -42,8 +43,7 @@ public class Questions extends JPanel
     public void loadQuestions() {
         JLabel question = new JLabel("Sample question");
 
-        JPanel radioPanel = new JPanel(new GridLayout(0, 1));
-        radioPanel = populateRadioPanel(radioPanel);
+        populateRadioPanel();
 
         //add a submit button
         JButton submitButton = new JButton(submit);
@@ -55,7 +55,7 @@ public class Questions extends JPanel
         setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
     }
 
-    public JPanel populateRadioPanel(JPanel radioPanel) {
+    public void populateRadioPanel() {
         //Create the radio buttons.
         JRadioButton notAtAllButton = new JRadioButton(notAtAll);
         notAtAllButton.setMnemonic(KeyEvent.VK_0);
@@ -84,7 +84,6 @@ public class Questions extends JPanel
         radioPanel.add(severalDaysButton);
         radioPanel.add(moreThanHalfButton);
         radioPanel.add(everyDayButton);
-        return radioPanel;
     }
 
     /** Listens to the radio buttons. */
