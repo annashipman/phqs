@@ -37,7 +37,7 @@ public class Questions extends JPanel
     JPanel radioPanel = new JPanel(new GridLayout(0, 1));
 
     public Questions() {
-        super(new BorderLayout());
+        super(new GridLayout(0, 2));
     }
 
     public void loadQuestions() {
@@ -46,14 +46,14 @@ public class Questions extends JPanel
         for (String q: questions) {
           JLabel question = new JLabel(q);
           populateRadioPanel();
-          add(question, BorderLayout.WEST);
-          add(radioPanel, BorderLayout.CENTER);
+          add(question);
+          add(radioPanel);
         }
         //add a submit button
         JButton submitButton = new JButton(submit);
         submitButton.addActionListener(this);
 
-        add(submitButton, BorderLayout.SOUTH);
+        add(submitButton);
         setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
     }
 
