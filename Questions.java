@@ -1,3 +1,8 @@
+package anna;
+
+import anna.Question;
+
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 
@@ -27,27 +32,22 @@ import javax.swing.JRadioButton;
 
 public class Questions extends JPanel
                              implements ActionListener {
-    static String notAtAll = "Not at all";
-    static String severalDays = "Several days";
-    static String moreThanHalf = "More than half the days";
-    static String everyDay = "Nearly every day";
     static String submit = "Submit";
-
-    ButtonGroup group = new ButtonGroup();
-    JPanel radioPanel = new JPanel(new GridLayout(0, 1));
+    private static Question[] questions = {
+          new Question("1"),
+          new Question("2"),
+          new Question("3")
+        };
 
     public Questions() {
         super(new GridLayout(0, 2));
     }
 
     public void loadQuestions() {
-        String[] questions = {"q1","q2","q3"};
 
-        for (String q: questions) {
-          JLabel label = new JLabel(q);
-          populateRadioPanel();
-          add(label);
-          add(radioPanel);
+        for (Question q: questions) {
+          add(q.label());
+          add(q.radioPanel());
         }
         //add a submit button
         JButton submitButton = new JButton(submit);
@@ -57,46 +57,17 @@ public class Questions extends JPanel
         setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
     }
 
-    public void populateRadioPanel() {
-        //Create the radio buttons.
-        JRadioButton notAtAllButton = new JRadioButton(notAtAll);
-        notAtAllButton.setMnemonic(KeyEvent.VK_0);
-        notAtAllButton.setActionCommand(notAtAll);
-
-        JRadioButton severalDaysButton = new JRadioButton(severalDays);
-        severalDaysButton.setMnemonic(KeyEvent.VK_1);
-        severalDaysButton.setActionCommand(severalDays);
-
-        JRadioButton moreThanHalfButton = new JRadioButton(moreThanHalf);
-        moreThanHalfButton.setMnemonic(KeyEvent.VK_2);
-        moreThanHalfButton.setActionCommand(moreThanHalf);
-
-        JRadioButton everyDayButton = new JRadioButton(everyDay);
-        everyDayButton.setMnemonic(KeyEvent.VK_3);
-        everyDayButton.setActionCommand(everyDay);
-
-        //Group the radio buttons.
-        group.add(notAtAllButton);
-        group.add(severalDaysButton);
-        group.add(moreThanHalfButton);
-        group.add(everyDayButton);
-
-        //Add them to radio panel
-        radioPanel.add(notAtAllButton);
-        radioPanel.add(severalDaysButton);
-        radioPanel.add(moreThanHalfButton);
-        radioPanel.add(everyDayButton);
-    }
 
     /** Listens to the radio buttons. */
     public void actionPerformed(ActionEvent e) {
-        //compose this to get what I want the action to be
-        ButtonModel selection = group.getSelection();
-        if (selection != null) {
-          writeResults(selection.getActionCommand());
-        }
-        else {
-          System.out.println("None selected");
+        for (Question q: questions){
+          ButtonModel selection = q.getSelection();
+          if (selection != null) {
+            writeResults(selection.getActionCommand());
+          }
+          else {
+            System.out.println("None selected");
+          }
         }
     }
 
