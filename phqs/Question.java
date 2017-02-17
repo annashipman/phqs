@@ -1,4 +1,4 @@
-package anna;
+package phqs;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;

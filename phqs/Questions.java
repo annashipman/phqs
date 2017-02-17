@@ -1,6 +1,6 @@
-package anna;
+package phqs;
 
-import anna.Question;
+import phqs.Question;
 
 
 import java.awt.BorderLayout;
