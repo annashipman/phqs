@@ -44,9 +44,9 @@ public class Questions extends JPanel
         String[] questions = {"q1","q2","q3"};
 
         for (String q: questions) {
-          JLabel question = new JLabel(q);
+          JLabel label = new JLabel(q);
           populateRadioPanel();
-          add(question);
+          add(label);
           add(radioPanel);
         }
         //add a submit button
