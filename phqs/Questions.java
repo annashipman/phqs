@@ -2,13 +2,10 @@ package phqs;
 
 import phqs.Question;
 
-
-import java.awt.BorderLayout;
 import java.awt.GridLayout;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -20,10 +17,8 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 import javax.swing.BorderFactory;
-import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;

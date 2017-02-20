@@ -1,13 +1,9 @@
 package phqs;
 
-import java.awt.BorderLayout;
 import java.awt.GridLayout;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
