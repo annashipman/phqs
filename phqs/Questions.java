@@ -3,6 +3,8 @@ package phqs;
 import phqs.Question;
 
 import java.awt.GridLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -44,11 +46,17 @@ public class Questions extends JPanel
           add(q.label());
           add(q.radioPanel());
         }
-        //add a submit button
+        JPanel buttonPanel = new JPanel(new GridBagLayout());
         JButton submitButton = new JButton(submit);
         submitButton.addActionListener(this);
 
-        add(submitButton);
+        GridBagConstraints gc = new GridBagConstraints();
+        gc.fill = GridBagConstraints.HORIZONTAL;
+        gc.gridx = 0;
+        gc.gridy = 0;
+
+        buttonPanel.add(submitButton);
+        add(buttonPanel);
         setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
     }
 
