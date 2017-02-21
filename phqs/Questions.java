@@ -46,6 +46,10 @@ public class Questions extends JPanel
           add(q.label());
           add(q.radioPanel());
         }
+
+    }
+
+    public void addSubmitButton() {
         JPanel buttonPanel = new JPanel(new GridBagLayout());
         JButton submitButton = new JButton(submit);
         submitButton.addActionListener(this);
@@ -57,7 +61,6 @@ public class Questions extends JPanel
 
         buttonPanel.add(submitButton);
         add(buttonPanel);
-        setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
     }
 
 
@@ -98,6 +101,8 @@ public class Questions extends JPanel
         //Create and set up the content pane.
         Questions newContentPane = new Questions();
         newContentPane.loadQuestions();
+        newContentPane.addSubmitButton();
+        newContentPane.setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
         newContentPane.setOpaque(true);
         frame.setContentPane(newContentPane);
 
