@@ -25,6 +25,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JSeparator;
+import javax.swing.SwingConstants;
 
 
 public class Questions extends JPanel
@@ -45,6 +47,8 @@ public class Questions extends JPanel
         for (Question q: questions) {
           add(q.label());
           add(q.radioPanel());
+          add(new JSeparator(SwingConstants.HORIZONTAL));
+          add(new JSeparator(SwingConstants.HORIZONTAL));
         }
 
     }
