@@ -36,7 +36,7 @@ public class Questions extends JPanel
           new Question("1"),
           new Question("2"),
           new Question("3")
-        };
+    };
 
     public Questions() {
         super(new GridLayout(0, 2));
