@@ -1,6 +1,7 @@
 package phqs;
 
 import phqs.Question;
+import phqs.PHQ;
 
 import java.awt.GridLayout;
 import java.awt.GridBagLayout;
@@ -32,11 +33,7 @@ import javax.swing.SwingConstants;
 public class Questions extends JPanel
                              implements ActionListener {
     static String submit = "Submit";
-    private static Question[] questions = {
-          new Question("1"),
-          new Question("2"),
-          new Question("3")
-    };
+    Question[] questions = PHQ.questions();
 
     public Questions() {
         super(new GridLayout(0, 2));
