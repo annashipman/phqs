@@ -27,6 +27,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JSeparator;
+import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 
 
@@ -105,7 +106,11 @@ public class Questions extends JPanel
         newContentPane.addSubmitButton();
         newContentPane.setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
         newContentPane.setOpaque(true);
-        frame.setContentPane(newContentPane);
+
+        JScrollPane scrollPane = new JScrollPane();
+        scrollPane.setViewportView(newContentPane);
+
+        frame.setContentPane(scrollPane);
 
         //Display the window.
         frame.pack();
