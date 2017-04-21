@@ -109,6 +109,8 @@ public class Questions extends JPanel
 
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setViewportView(newContentPane);
+        scrollPane.getVerticalScrollBar().setUnitIncrement(10);
+        scrollPane.getHorizontalScrollBar().setUnitIncrement(10);
 
         frame.setContentPane(scrollPane);
 
