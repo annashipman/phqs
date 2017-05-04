@@ -1,0 +1,14 @@
+<project name="phqs" default="compile" basedir=".">
+    <description>
+        Build file for PHQs
+    </description>
+
+  <target name="compile" description="compile the source" >
+    <javac srcdir="phqs" destdir="."/>
+  </target>
+
+  <target name="run" depends="compile" description="ask the questions" >
+    <java classname="phqs.Questions" fork="yes"/>
+  </target>
+
+</project>
