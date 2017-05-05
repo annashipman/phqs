@@ -9,6 +9,7 @@ import java.awt.GridBagConstraints;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Dimension;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -99,6 +100,7 @@ public class Questions extends JPanel
         //Create and set up the window.
         JFrame frame = new JFrame("PHQs");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setPreferredSize(new Dimension(1000, 1000));
 
         //Create and set up the content pane.
         Questions newContentPane = new Questions();
