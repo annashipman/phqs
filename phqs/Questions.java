@@ -107,6 +107,7 @@ public class Questions extends JPanel
         newContentPane.loadQuestions();
         newContentPane.addSubmitButton();
         newContentPane.setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+        newContentPane.setPreferredSize(new Dimension(250, 1000));
         newContentPane.setOpaque(true);
 
         JScrollPane scrollPane = new JScrollPane();
